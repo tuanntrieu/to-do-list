@@ -9,8 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "com.example.nhom10"
-        minSdk = 27
-        targetSdk = 34
+        minSdk = 26
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 
@@ -25,6 +26,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,4 +48,5 @@ dependencies {
     // Thêm Lombok dependencies
     implementation("org.projectlombok:lombok:1.18.20") // Thêm Lombok dependency
     annotationProcessor("org.projectlombok:lombok:1.18.20") // Thêm Lombok annotation processor
+    implementation(kotlin("script-runtime"))
 }

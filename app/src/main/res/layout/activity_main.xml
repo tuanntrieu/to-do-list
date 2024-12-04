@@ -1,72 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
-    android:background="#000000">
+    android:background="@color/lavender">
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/imgView_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="200dp"
-        android:layout_alignParentTop="true"/>
+    </FrameLayout>
 
-    <TextView
-        android:id="@+id/txt_welcome"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="50dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/botttom_menu" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CHÀO MỪNG ĐẾN VỚI UPTODO"
-        android:layout_below="@+id/imgView_logo"
-        android:textSize="24sp"
-        android:textColor="#FFFFFF"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="16dp"
-        />
-
-    <TextView
-        android:id="@+id/txt_huongdan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đăng nhập tài khoản của bạn hặc tạo mới để tiếp tục"
-        android:textSize="12sp"
-        android:textColor="#BBBBBB"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/txt_welcome"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="32dp"/>
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#7F5AF0"
-        android:text="ĐĂNG NHẬP"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/txt_huongdan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
-
-    <Button
-        android:id="@+id/create_account_button"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_button"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="79dp"
-        android:backgroundTint="@color/lavender"
-        android:strokeWidth="2"
-        android:strokeColor="#7F5AF0"
-        android:text="ĐĂNG KÝ"
-        android:textColor="@color/red" />
+        android:backgroundTint="@color/white"
+        android:src="@drawable/baseline_add_24"
+        app:layout_anchor="@+id/bottomAppBar"
+        app:layout_anchorGravity="top|center"
+        app:maxImageSize="50dp"
+        app:tint="@color/lavender" />
 
 
-</RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
